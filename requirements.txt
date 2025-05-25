@@ -3,3 +3,6 @@ mkdocs-same-dir
 mkdocs-minify-plugin
 mkdocs-with-pdf
 weasyprint
+Flask
+Markdown
+PyYAML
