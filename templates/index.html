@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe App</h1>
+    </header>
+    <div class="container">
+        <h2>All Recipes</h2>
+        <ul class="recipe-list">
+            {% for recipe in recipes %}
+                <li><a href="{{ url_for('recipe_page', path=recipe.path) }}">{{ recipe.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

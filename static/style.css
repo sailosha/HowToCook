@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Ensure header h1 color contrasts with dark background */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin-top: 1em; /* Add some top margin to headings */
+    margin-bottom: 0.5em; /* Add some bottom margin */
+}
+
+ul, ol {
+    margin-left: 20px; /* Indent lists */
+}
+
+li {
+    margin-bottom: 5px; /* Space out list items a bit */
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.recipe-content img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Center images or prevent weird text wrapping */
+    margin: 10px 0; /* Add some margin around images */
+}
+
+/* Style for the recipe list on the homepage */
+.recipe-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recipe-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.recipe-list li a {
+    font-size: 1.2em;
+    color: #337ab7;
+}
+
+/* Style for the individual recipe page */
+.recipe-detail-title {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: #555;
+    text-decoration: none;
+}

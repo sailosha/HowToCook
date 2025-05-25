@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe App</h1>
+    </header>
+    <div class="container">
+        <h1 class="recipe-detail-title">{{ recipe.title }}</h1>
+        <div class="recipe-content">
+            {{ recipe.html_content | safe }}
+        </div>
+        <a href="{{ url_for('homepage') }}" class="back-link">Back to Recipes</a>
+    </div>
+</body>
+</html>

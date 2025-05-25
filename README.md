@@ -17,6 +17,72 @@
 
 在写新菜谱时，请复制并修改已有的菜谱模板: [示例菜](https://github.com/Anduin2017/HowToCook/blob/master/dishes/template/%E7%A4%BA%E4%BE%8B%E8%8F%9C/%E7%A4%BA%E4%BE%8B%E8%8F%9C.md?plain=1)。
 
+## Web Application for Recipe Viewing
+
+This project now includes a Flask web application to browse the recipes.
+
+### Setup and Running the Web Application
+1.  **Ensure you have Python installed.**
+2.  **Clone the repository (if you haven't already):**
+    ```bash
+    git clone <repository-url> # Replace <repository-url> with the actual URL
+    cd HowToCook # Or your repository folder name
+    ```
+3.  **Create a virtual environment (recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+4.  **Install dependencies:**
+    Make sure you have a `requirements.txt` file in the root of the project with the following content:
+    ```
+    Flask
+    Markdown
+    ```
+    Then run:
+    ```bash
+    pip install -r requirements.txt
+    ```
+5.  **Run the application:**
+    Navigate to the root directory of the project (where `app.py` is located) and run:
+    ```bash
+    python app.py
+    ```
+    Alternatively, you can use the Flask CLI:
+    ```bash
+    export FLASK_APP=app.py  # For Linux/macOS
+    # set FLASK_APP=app.py    # For Windows
+    export FLASK_ENV=development # Optional: enables debug mode
+    # set FLASK_ENV=development   # Optional: For Windows
+    flask run
+    ```
+    The application will typically be available at `http://127.0.0.1:5000/`.
+
+### Manual Testing Guide for the Web Application
+
+Follow these steps to manually test the web application:
+
+1.  **Access the Homepage:**
+    *   Open your web browser and navigate to `http://127.0.0.1:5000/`.
+
+2.  **Check the Homepage:**
+    *   **List of Recipes:** Verify that a list of recipe titles is displayed. These titles should correspond to the Markdown files in the `dishes` directory.
+    *   **Links:** Click on a few recipe links. Ensure they navigate to the correct recipe page. The URL should change to something like `/recipe/path/to/your-recipe.md` (e.g., `/recipe/vegetable_dish/西红柿炒鸡蛋.md`).
+
+3.  **Navigate to a Recipe Page:**
+    *   Click on any recipe title from the homepage.
+
+4.  **Check the Recipe Page:**
+    *   **Title:** Verify that the recipe title is displayed correctly at the top of the page and in the browser tab/window title.
+    *   **Content:** Check that the recipe content (ingredients, instructions, etc.) is displayed and formatted reasonably. This content comes from the Markdown file, so basic formatting like headings, lists, and paragraphs should be visible.
+    *   **Images (if applicable):** If a recipe includes images, verify they are displayed. For example, check the "小龙虾" recipe (`dishes/aquatic/小龙虾/小龙虾.md`) which should display "成品.jpg". The image path in the markdown file is relative to the markdown file itself.
+    *   **Back Link:** Click the "Back to Recipes" link. It should take you back to the homepage (`/`).
+
+5.  **Test Different Recipes:**
+    *   **Subdirectory Recipe:** Test a recipe located in a subdirectory, for example, "清蒸鲈鱼" (`dishes/aquatic/清蒸鲈鱼/清蒸鲈鱼.md`). Ensure it loads correctly and its path in the URL reflects the subdirectory structure (e.g., `/recipe/aquatic/清蒸鲈鱼/清蒸鲈鱼.md`).
+    *   **Recipe with Images:** Specifically test the "小龙虾" recipe (`dishes/aquatic/小龙虾/小龙虾.md`). Ensure the image "成品.jpg" within its content is rendered.
+    *   **Other recipes:** Browse a few other recipes from different categories to ensure they load correctly and display their content as expected.
+
 ## 做菜之前
 
 - [厨房准备](./tips/厨房准备.md)
