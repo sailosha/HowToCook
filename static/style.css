@@ -1,0 +1,158 @@
+/* General Body Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Lighter gray for background */
+    color: #343a40; /* Darker gray for text */
+}
+
+/* Container for centered content */
+.container {
+    width: 80%;
+    max-width: 960px; /* Max width for larger screens */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px;
+}
+
+/* Header Styles */
+header {
+    background: #007bff; /* Professional blue */
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: #0056b3 3px solid;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2rem; /* Larger font for site title */
+    font-weight: bold;
+}
+
+/* Navigation (if any - currently just header link) */
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area */
+.content {
+    padding: 20px 0; /* Padding top/bottom, no horizontal as container handles it */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #0056b3; /* Darker blue for headings */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
+
+/* Paragraphs and Lists */
+p {
+    margin-bottom: 1em;
+    color: #495057; /* Slightly lighter than main text for body copy */
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Recipe List (index.html) */
+.recipe-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list li {
+    background-color: #e9ecef; /* Light gray background for list items */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #007bff; /* Blue accent border */
+}
+
+.recipe-list li a {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Recipe Detail (recipe.html) */
+.recipe-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for images */
+    display: block; /* Center images if they are narrower than container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recipe-detail h1 {
+    border-bottom: 2px solid #dee2e6; /* Separator for title */
+    padding-bottom: 0.5em;
+}
+
+.recipe-detail h2 {
+    margin-top: 2em; /* More space before section titles */
+    border-bottom: 1px solid #e9ecef; /* Lighter separator for section titles */
+    padding-bottom: 0.3em;
+}
+
+/* Back to all recipes link */
+.recipe-detail p a[href="{{ url_for('index') }}"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #6c757d; /* Gray for back button */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.recipe-detail p a[href="{{ url_for('index') }}"]:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+    text-decoration: none;
+}

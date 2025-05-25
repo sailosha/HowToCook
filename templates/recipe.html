@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}{{ recipe.title }} - Recipe Book{% endblock %}
+
+{% block content %}
+    <article class="recipe-detail">
+        <h1>{{ recipe.title }}</h1>
+        
+        {% if recipe.description %}
+            <p>{{ recipe.description }}</p>
+        {% endif %}
+
+        {% if recipe.difficulty %}
+            <h2>预估烹饪难度</h2>
+            <p>{{ recipe.difficulty }}</p>
+        {% endif %}
+
+        {% if recipe.ingredients %}
+            <h2>必备原料和工具</h2>
+            <ul>
+                {% for item in recipe.ingredients %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if recipe.calculations %}
+            <h2>计算</h2>
+            {% if recipe.calculations is mapping %} {# Check if it's a dictionary #}
+                <ul>
+                    {% for key, value in recipe.calculations.items() %}
+                        <li><strong>{{ key }}:</strong> {{ value }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %} {# If it's a string or other non-mapping type #}
+                <p>{{ recipe.calculations }}</p>
+            {% endif %}
+        {% endif %}
+
+        {% if recipe.instructions %}
+            <h2>操作</h2>
+            <ol>
+                {% for step in recipe.instructions %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+        {% if recipe.image_paths %}
+            <h2>Images</h2>
+            {% for image_path in recipe.image_paths %}
+                {# image_path is now expected to be relative to the 'dishes' directory #}
+                {# e.g., category/recipe_folder/image.jpg #}
+                <img src="{{ url_for('serve_image', filename=image_path) }}" alt="{{ recipe.title }} image">
+            {% endfor %}
+        {% endif %}
+
+        <p><a href="{{ url_for('index') }}">Back to all recipes</a></p>
+    </article>
+{% endblock %}

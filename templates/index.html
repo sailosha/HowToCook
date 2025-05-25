@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}All Recipes - Recipe Book{% endblock %}
+
+{% block content %}
+    <h1>All Recipes</h1>
+    {% if recipes %}
+        <ul class="recipe-list">
+            {% for recipe in recipes %}
+                <li>
+                    {# Assuming recipe dictionary has a 'title' and an 'id' or 'slug' for URL generation #}
+                    {# For now, using recipe_index which will be its position in the list #}
+                    <a href="{{ url_for('recipe_detail', recipe_id=loop.index0) }}">{{ recipe.title }}</a>
+                    (Category: {{ recipe.category }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes found.</p>
+    {% endif %}
+{% endblock %}
